@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: blanchedalmond;
+    font-family: "Iceland";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container {
+    width: 80%;
+    height: fit-content;
+    border: 2px solid hotpink;
+    margin: 50px 0;
+    background-color: black;
+    color: hotpink;
+    box-shadow: 5px 5px 8px rgba(0,0,0,0.5);
+}
+
+/* title: rock, paper, scissors */
+.gameboard .title {
+    font-size: 30px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.players-choice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* text: player's choice */
+.players-choice h2 {
+    margin-left: -60px;
+    margin-right: 15px;
+}
+
+/* div: rock,paper,scissors */
+.images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+}
+
+#rock-img {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+#paper-img {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+#scissors-img {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+#rock-img:hover, #paper-img:hover, #scissors-img:hover {
+    border: 2px solid hotpink;
+}
+
+
+/* computers choice div */
+.computer-choice {
+    margin-left: 40px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+/* div for returning computers choice */
+.computer-choice {
+    width: 100%;
+    height: fit-content;
+}
+
+/* computer choice image */
+.computer-choice-image {
+    width: 100px;
+    height: 100px;
+}
+
+/* results div */
+.results {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* div for text: score */
+.scores {
+    font-size: 25px;
+    color: aqua;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    margin-left: 30px;
+
+}
+
+.score-results {
+    display: flex;
+    gap: 80px;
+    
+}
+
+/* buttons div */
+.buttons {
+    display: flex;
+    gap: 50px;
+}
+
+/* play again button */
+.play-again-button {
+    border: 2px solid aqua;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 20px;
+    width: 200px;
+    height: fit-content;
+    text-align: center;
+    margin-left: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    cursor: pointer;
+}
+
+.quit-button {
+    border: 2px solid aqua;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 20px;
+    width: 200px;
+    height: fit-content;
+    text-align: center;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    cursor: pointer;
+}
+
+.play-again-button:hover, .quit-button:hover {
+    transition: 1s;
+    background-color: hotpink;
+    color: black;
+
+}
