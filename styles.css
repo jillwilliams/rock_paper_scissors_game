@@ -74,7 +74,6 @@ body {
     border: 2px solid hotpink;
 }
 
-
 /* computers choice div */
 .computer-choice {
     margin-left: 40px;
@@ -86,12 +85,25 @@ body {
 .computer-choice {
     width: 100%;
     height: fit-content;
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
+/* text: computers choice */
+.computer-choice h2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+
 /* computer choice image */
-.computer-choice-image {
+.computer-choice-image img {
     width: 100px;
     height: 100px;
+    scale: 1;
+    margin-top: 30px;
 }
 
 /* results div */
@@ -99,11 +111,12 @@ body {
     font-size: 30px;
     text-align: center;
     margin-bottom: 30px;
+    margin-top: 50px;
 }
 
 /* div for text: score */
 .scores {
-    font-size: 25px;
+    font-size: 20px;
     color: aqua;
     display: flex;
     flex-direction: row;

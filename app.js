@@ -20,8 +20,13 @@ const computerChoice = choices[randomIndex];
 
 
 const playRocks = () => {
-    const playersChoice = choices[0];
-    computerChoiceImageEl.innerText = computerChoice
+    // const playersChoice = choices[0];
+    const randomIndex = Math.round(Math.random() * 2);
+    const computerChoice = choices[randomIndex];
+
+    const imgString = `<img src="${computerChoice}" />`
+    computerChoiceImageEl.innerHTML = imgString;
+    
     if (computerChoice === choices[0]) {
         resultsDivEl.innerText = "It's a tie!"
         const tiedScore = ties++
@@ -35,11 +40,21 @@ const playRocks = () => {
         const winScore = wins++
         resultWinsEl.innerText = `${winScore + 1}`
     }
+    rockImageEl.removeEventListener("click", playRocks);
+    paperImageEl.removeEventListener("click", playPaper);
+    scissorsImageEl.removeEventListener("click", playScissors);
 }
 
+
 const playPaper = () => {
-    const playersChoice = choices[1];
-    computerChoiceImageEl.innerText = computerChoice
+    // const playersChoice = choices[1];
+
+    const randomIndex = Math.round(Math.random() * 2);
+    const computerChoice = choices[randomIndex];
+
+    const imgString = `<img src="${computerChoice}" />`
+    computerChoiceImageEl.innerHTML = imgString;
+
     if (computerChoice === choices[1]) {
         resultsDivEl.innerText = "It's a tie!"
         const tiedScore = ties++
@@ -53,11 +68,20 @@ const playPaper = () => {
         const lossesScore = losses++
         resultLossesEl.innerText = `${lossesScore + 1}`
     }
+    rockImageEl.removeEventListener("click", playRocks);
+    paperImageEl.removeEventListener("click", playPaper);
+    scissorsImageEl.removeEventListener("click", playScissors);
 }
 
+
 const playScissors = () => {
-    const playersChoice = choices[2];
-    computerChoiceImageEl.innerText = computerChoice
+    // const playersChoice = choices[2];
+    const randomIndex = Math.round(Math.random() * 2);
+    const computerChoice = choices[randomIndex];
+
+    const imgString = `<img src="${computerChoice}" />`
+    computerChoiceImageEl.innerHTML = imgString;
+
     if (computerChoice === choices[2]) {
         resultsDivEl.innerText = "It's a tie!"
         const tiedScore = ties++
@@ -71,9 +95,35 @@ const playScissors = () => {
         const winsScore = wins++
         resultWinsEl.innerText = `${winsScore + 1}`
     }
+    rockImageEl.removeEventListener("click", playRocks);
+    paperImageEl.removeEventListener("click", playPaper);
+    scissorsImageEl.removeEventListener("click", playScissors);
+}
+
+const playAgain = () => {
+    computerChoiceImageEl.innerHTML = "";
+    resultsDivEl.innerText = ""; 
+
+    // 2. Remove old listeners to prevent stacking
+    rockImageEl.removeEventListener("click", playRocks);
+    paperImageEl.removeEventListener("click", playPaper);
+    scissorsImageEl.removeEventListener("click", playScissors);
+
+    // 3. Add fresh event listeners
+    rockImageEl.addEventListener("click", playRocks);
+    paperImageEl.addEventListener("click", playPaper);
+    scissorsImageEl.addEventListener("click", playScissors);
 }
 
 
+const quitGame = () => {
+    computerChoiceImageEl.innerHTML = " ";
+    resultsDivEl.innerText = "Thanks for playing!";
+    
+    rockImageEl.removeEventListener("click", playRocks);
+    paperImageEl.removeEventListener("click", playPaper);
+    scissorsImageEl.removeEventListener("click", playScissors);
+}
 
 rockImageEl.addEventListener("click", playRocks);
 paperImageEl.addEventListener("click", playPaper);
