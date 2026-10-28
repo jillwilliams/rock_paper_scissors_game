@@ -40,6 +40,9 @@ const playRocks = () => {
         const winScore = wins++
         resultWinsEl.innerText = `${winScore + 1}`
     }
+    rockImageEl.removeEventListener("click", playRocks);
+    paperImageEl.removeEventListener("click", playPaper);
+    scissorsImageEl.removeEventListener("click", playScissors);
 }
 
 
@@ -65,6 +68,9 @@ const playPaper = () => {
         const lossesScore = losses++
         resultLossesEl.innerText = `${lossesScore + 1}`
     }
+    rockImageEl.removeEventListener("click", playRocks);
+    paperImageEl.removeEventListener("click", playPaper);
+    scissorsImageEl.removeEventListener("click", playScissors);
 }
 
 
@@ -89,6 +95,9 @@ const playScissors = () => {
         const winsScore = wins++
         resultWinsEl.innerText = `${winsScore + 1}`
     }
+    rockImageEl.removeEventListener("click", playRocks);
+    paperImageEl.removeEventListener("click", playPaper);
+    scissorsImageEl.removeEventListener("click", playScissors);
 }
 
 const playAgain = () => {
@@ -111,6 +120,9 @@ const quitGame = () => {
     computerChoiceImageEl.innerHTML = " ";
     resultsDivEl.innerText = "Thanks for playing!";
     
+    rockImageEl.removeEventListener("click", playRocks);
+    paperImageEl.removeEventListener("click", playPaper);
+    scissorsImageEl.removeEventListener("click", playScissors);
 }
 
 rockImageEl.addEventListener("click", playRocks);
