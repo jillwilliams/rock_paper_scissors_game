@@ -135,7 +135,7 @@ const playAgain = () => {
         scissorsImageEl.classList.remove("hidden");
     }
     showImages();
-    
+
     // 2. Remove old listeners to prevent stacking
     rockImageEl.removeEventListener("click", playRocks);
     paperImageEl.removeEventListener("click", playPaper);
@@ -152,6 +152,16 @@ const quitGame = () => {
     computerChoiceImageEl.innerHTML = " ";
     resultsDivEl.innerText = "Thanks for playing!";
     
+    const hideImages = () => {
+        rockImageEl.classList.add("hidden");
+        paperImageEl.classList.add("hidden");
+        scissorsImageEl.classList.add("hidden");
+    }
+    hideImages();
+
+
+
+
     rockImageEl.removeEventListener("click", playRocks);
     paperImageEl.removeEventListener("click", playPaper);
     scissorsImageEl.removeEventListener("click", playScissors);
