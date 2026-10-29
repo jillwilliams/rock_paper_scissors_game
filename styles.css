@@ -12,7 +12,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .container {
@@ -49,7 +48,6 @@ body {
     justify-content: center;
     align-items: center;
     gap: 15px;
-
 }
 
 #rock-img {
@@ -68,6 +66,18 @@ body {
     width: 100px;
     height: 100px;
     cursor: pointer;
+}
+
+#rock-img.hidden {
+    display: none;
+}
+
+#paper-img.hidden {
+    display: none;
+}
+
+#scissors-img.hidden {
+    display: none;
 }
 
 #rock-img:hover, #paper-img:hover, #scissors-img:hover {
@@ -124,13 +134,12 @@ body {
     flex-direction: row;
     gap: 50px;
     margin-left: 30px;
-
 }
 
 .score-results {
     display: flex;
-    gap: 80px;
-    
+    gap: 80px; 
+    justify-content: center;
 }
 
 /* buttons div */
@@ -172,7 +181,6 @@ body {
     transition: 1s;
     background-color: hotpink;
     color: black;
-
 }
 
 

@@ -27,6 +27,12 @@ const playRocks = () => {
     const imgString = `<img src="${computerChoice}" />`
     computerChoiceImageEl.innerHTML = imgString;
     
+    const hideImages = () => {
+        paperImageEl.classList.add("hidden");
+        scissorsImageEl.classList.add("hidden");
+    }
+    hideImages();
+    
     if (computerChoice === choices[0]) {
         resultsDivEl.innerText = "It's a tie!"
         const tiedScore = ties++
@@ -40,9 +46,13 @@ const playRocks = () => {
         const winScore = wins++
         resultWinsEl.innerText = `${winScore + 1}`
     }
+    
     rockImageEl.removeEventListener("click", playRocks);
     paperImageEl.removeEventListener("click", playPaper);
     scissorsImageEl.removeEventListener("click", playScissors);
+
+    
+
 }
 
 
@@ -54,6 +64,13 @@ const playPaper = () => {
 
     const imgString = `<img src="${computerChoice}" />`
     computerChoiceImageEl.innerHTML = imgString;
+
+    const hideImages = () => {
+        rockImageEl.classList.add("hidden");
+        scissorsImageEl.classList.add("hidden");
+    }
+    hideImages();
+
 
     if (computerChoice === choices[1]) {
         resultsDivEl.innerText = "It's a tie!"
@@ -82,6 +99,13 @@ const playScissors = () => {
     const imgString = `<img src="${computerChoice}" />`
     computerChoiceImageEl.innerHTML = imgString;
 
+    const hideImages = () => {
+        rockImageEl.classList.add("hidden");
+        paperImageEl.classList.add("hidden");
+    }
+    hideImages();
+
+
     if (computerChoice === choices[2]) {
         resultsDivEl.innerText = "It's a tie!"
         const tiedScore = ties++
@@ -104,6 +128,14 @@ const playAgain = () => {
     computerChoiceImageEl.innerHTML = "";
     resultsDivEl.innerText = ""; 
 
+    const showImages = () => {
+        rockImageEl.classList.remove("hidden"
+        );
+        paperImageEl.classList.remove("hidden");
+        scissorsImageEl.classList.remove("hidden");
+
+    }
+    showImages();
     // 2. Remove old listeners to prevent stacking
     rockImageEl.removeEventListener("click", playRocks);
     paperImageEl.removeEventListener("click", playPaper);
